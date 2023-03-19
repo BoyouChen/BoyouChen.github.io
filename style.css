@@ -52,3 +52,12 @@ footer {
     padding: 1rem;
     margin-top: 2rem;
 }
+.profile-photo {
+    float: left;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+}

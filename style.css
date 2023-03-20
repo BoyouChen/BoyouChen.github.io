@@ -71,7 +71,7 @@ footer {
 .profile-photo {
     float: left;
     width: 100%;
-    max-width: 30px; /* Adjust this value to set a maximum width for the photo */
+    max-width: 100px; /* Adjust this value to set a maximum width for the photo */
     height: auto;
 }
 

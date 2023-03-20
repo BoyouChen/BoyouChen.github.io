@@ -17,6 +17,7 @@ header {
     position: fixed;
     width: 100%;
     z-index: 100;
+    animation: fadeIn 2s;
 }
 
 header nav ul {
@@ -43,7 +44,7 @@ section {
     padding: 1rem;
     border-radius: 4px;
     margin-bottom: 2rem;
-    animation: fadeIn 1s;
+    animation: fadeIn 2s;
 }
 
 h1, h2 {
@@ -71,9 +72,6 @@ footer {
     float: left;
     width: 30px;
     height: 30px;
-    object-fit: cover;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
 }
 
 @keyframes fadeIn {

@@ -1,80 +1,84 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background: url('Background.jpg') no-repeat center center fixed;
-    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: rgba(51, 51, 51, 0.7);
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-    animation: fadeIn 2s;
+    background-color: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
 }
 
-header nav ul {
-    list-style-type: none;
+header h1 {
+    float: left;
+    margin: 0;
 }
 
-header nav ul li {
-    display: inline;
-    margin-right: 1rem;
+header nav {
+    float: right;
+    margin-top: 10px;
 }
 
-header nav ul li a {
-    color: #fff;
+header nav a {
+    color: #ffffff;
     text-decoration: none;
+    padding: 0 20px 0 0;
+}
+
+header nav a:hover {
+    background-color: #e8491d;
+    padding: 5px;
 }
 
 main {
-    padding: 2rem;
-    margin-top: 4rem;
-}
-
-section {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 1rem;
-    border-radius: 4px;
-    margin-bottom: 2rem;
-    animation: fadeIn 2s;
-}
-
-h1, h2 {
-    margin-bottom: 1rem;
-}
-
-a {
-    color: #333;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    padding: 30px;
 }
 
 footer {
-    background-color: rgba(51, 51, 51, 0.7);
-    color: #fff;
+    background-color: #35424a;
+    color: #ffffff;
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    padding: 15px;
+    margin-top: 25px;
 }
 
-.profile-photo {
-    float: left;
+.my-photo {
     width: 100%;
-    max-width: 100px; /* Adjust this value to set a maximum width for the photo */
+    max-width: 300px; /* Adjust this value to control the maximum width of the photo */
     height: auto;
+    display: block;
+    margin: 10px auto;
 }
 
+.about-me {
+    text-align: center;
+    padding: 30px;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    border: 1px solid #dddddd;
+    animation: fadeIn 1.5s;
+}
+
+#publications, #contact {
+    padding: 30px;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    border: 1px solid #dddddd;
+}
+
+#publications h2, #contact h2 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Animation */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -82,4 +86,15 @@ footer {
     100% {
         opacity: 1;
     }
+}
+
+.about-me, #publications {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+#publications {
+    animation-delay: 0.5s;
 }

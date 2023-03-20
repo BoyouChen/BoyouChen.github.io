@@ -51,7 +51,7 @@ footer {
 
 .my-photo {
     width: 100%;
-    max-width: 300px; /* Adjust this value to control the maximum width of the photo */
+    max-width: 100px; /* Adjust this value to control the maximum width of the photo */
     height: auto;
     display: block;
     margin: 10px auto;

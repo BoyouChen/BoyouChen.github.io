@@ -25,7 +25,7 @@ $(document).ready(function() {
 function fadeInContent() {
   $('.hidden').each(function() {
     if (isInViewport(this)) {
-      $(this).removeClass('hidden');
+      $(this).animate({opacity: 1}, 1000).removeClass('hidden');
     }
   });
 }

@@ -56,11 +56,13 @@ nav a:hover {
 .intro h1 {
   font-size: 48px;
   margin-bottom: 20px;
+  align-items: center;
 }
 
 .intro p {
   font-size: 24px;
   margin-bottom: 20px;
+  align-items: center;
 }
 
 .intro img {

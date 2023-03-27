@@ -22,13 +22,14 @@ $(document).ready(function() {
   }
 
   // Fade in content sections when they appear in the viewport
-  function fadeInContent() {
-    $('.hidden').each(function() {
-      if (isInViewport(this)) {
-        $(this).fadeIn(1000).removeClass('hidden');
-      }
-    });
-  }
+function fadeInContent() {
+  $('.hidden').each(function() {
+    if (isInViewport(this)) {
+      $(this).removeClass('hidden');
+    }
+  });
+}
+
 
   // Initial check for content sections in the viewport
   fadeInContent();

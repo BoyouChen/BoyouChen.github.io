@@ -1,102 +1,96 @@
-/* General styles */
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: 'Arial', sans-serif;
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	line-height: 1.6;
+	color: #333;
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
 }
 
-h1 {
-  margin: 0;
-  font-size: 4rem;
-  font-weight: bold;
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
 }
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
+p {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
-/* Navigation styles */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 1rem;
-  font-size: 1.2rem;
+a {
+	color: #007bff;
+	text-decoration: none;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 1rem;
+a:hover {
+	text-decoration: underline;
 }
 
-nav a:hover {
-  color: #ccc;
+.navbar-brand {
+	font-size: 1.5rem;
+	font-weight: 700;
 }
 
-/* Header styles */
-#header {
-  height: 100%;
-  background-image: url('path/to/your/background/image.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+.nav-link {
+	font-size: 1.2rem;
+	font-weight: 500;
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 
-.text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3rem;
-  font-weight: bold;
-  color: #fff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.jumbotron {
+	background-image: url('bg.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	padding: 12rem;
+	margin-bottom: 0;
+	color: #fff;
 }
 
-.word {
-  display: inline;
+#about, #education, #experience, #skills, #projects, #contact {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
 }
 
-/* Animations */
+#education, #experience, #projects {
+	background-color: #fff;
+}
+
 .animate__animated {
-  animation-duration: 1s;
-  animation-fill-mode: both;
+	animation-duration: 1s;
+	animation-fill-mode: both;
 }
 
 .animate__fadeIn {
-  animation-name: fadeIn;
+	animation-name: fadeIn;
 }
 
-.animate__fadeOut {
-  animation-name: fadeOut;
+.animate__fadeInDown {
+	animation-name: fadeInDown;
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -50%, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
 }

@@ -1,57 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boyou Chen</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Boyou Chen - Academic</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">Boyou Chen</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+	<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+		<a class="navbar-brand" href="#">Boyou Chen</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#about">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#education">Education</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#experience">Experience</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#skills">Skills</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#projects">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#contact">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
-  <section id="about" class="container py-5">
-    <h2>About</h2>
-    <p>
-      <!-- Add your 'about me' content here -->
-    </p>
-  </section>
+	<section id="home" class="jumbotron text-center">
+		<h1 class="display-4 animate__animated animate__fadeInDown">Boyou Chen</h1>
+		<p class="lead animate__animated animate__fadeIn">Software Engineer</p>
+	</section>
 
-  <section id="projects" class="container py-5">
-    <h2>Projects</h2>
-    <div class="row">
-      <!-- Add your project cards here -->
-    </div>
-  </section>
+	<section id="about" class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>About</h2>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 offset-lg-2">
+				<p class="animate__animated animate__fadeIn">I'm a software engineer from China. I enjoy coding and solving complex problems. I have experience in various programming languages such as Java, Python, and JavaScript. I have a passion for developing innovative and intuitive web applications.</p>
+			</div>
+		</div>
+	</section>
 
-  <section id="contact" class="container py-5">
-    <h2>Contact</h2>
-    <p>
-      <!-- Add your contact information here -->
-    </p>
-  </section>
+	<section id="education" class="container-fluid bg-light">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Education</h2>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 offset-lg-2">
+				<p class="animate__animated animate__fadeIn">B.S. in Computer Science, Tsinghua University, China (2015-2019)</p>
+				<p class="animate__animated animate__fadeIn">M.S. in Computer Science, Stanford University, USA (2019-2021)</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="experience" class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h2>Experience</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 offset-lg-2">
+			<p class="animate__animated animate__fadeIn">Software Engineer, Google, USA (2021-present)</p>
+			<p class="animate__animated animate__fadeIn">Software Development Intern, Microsoft, USA (Summer 2020)</p>
+			<p class="animate__animated animate__fadeIn">Software Engineering Intern, Amazon, USA (Summer 2019)</p>
+		</div>
+	</div>
+</section>
+
+<section id="skills" class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h2>Skills</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 offset-lg-2">
+			<p class="animate__animated animate__fadeIn">Java</p>
+			<p class="animate__animated animate__fadeIn">Python</p>
+			<p class="animate__animated animate__fadeIn">JavaScript</p>
+			<p class="animate__animated animate__fadeIn">React</p>
+			<p class="animate__animated animate__fadeIn">Node.js</p>
+			<p class="animate__animated animate__fadeIn">MongoDB</p>
+		</div>
+	</div>
+</section>
+
+<section id="projects" class="container-fluid bg-light">
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h2>Projects</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 offset-lg-2">
+			<p class="animate__animated animate__fadeIn">Project 1: Responsive Web Design using HTML, CSS, and JavaScript</p>
+			<p class="animate__animated animate__fadeIn">Project 2: Real-time chat application using React, Node.js, and MongoDB</p>
+			<p class="animate__animated animate__fadeIn">Project 3: Data analysis and visualization using Python and R</p>
+		</div>
+	</div>
+</section>
+
+<section id="contact" class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h2>Contact</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 offset-lg-2">
+			<p class="animate__animated animate__fadeIn">Email: boyouchen@gmail.com</p>
+			<p class="animate__animated animate__fadeIn">Phone: +1 (123) 456-7890</p>
+		</div>
+	</div>
+</section>
+
+<footer class="container-fluid text-center">
+	<p>Copyright &copy; 
+	<script>document.write(new Date().getFullYear())</script> Boyou Chen</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
+```

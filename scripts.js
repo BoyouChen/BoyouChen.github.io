@@ -1,14 +1,15 @@
 $(document).ready(function () {
   let words = $('.word');
   let currentIndex = 0;
-  let nextIndex = 1;
 
   function changeWord() {
-    $(words[currentIndex]).removeClass('animate__fadeIn').addClass('animate__fadeOut');
-    $(words[nextIndex]).removeClass('animate__fadeOut').addClass('animate__fadeIn');
+    $(words[currentIndex]).addClass('animate__fadeOut');
 
-    currentIndex = nextIndex;
-    nextIndex = (nextIndex + 1) % words.length;
+    setTimeout(function () {
+      $(words[currentIndex]).removeClass('animate__fadeIn animate__fadeOut');
+      currentIndex = (currentIndex + 1) % words.length;
+      $(words[currentIndex]).addClass('animate__fadeIn');
+    }, 1000); // match the animation-duration specified in the CSS
   }
 
   setInterval(changeWord, 3000);

@@ -68,9 +68,8 @@ nav a:hover {
 
 main {
   max-width: 800px;
-  margin: calc(100px + 60px) auto 100px;
+  margin: calc(100px + 60px + 400px) auto 100px; /* 100px (header top margin) + 60px (header height) + 400px (intro height) */
   padding: 0 20px;
-  z-index: 10; /* Added z-index with a lower value than the header */
 }
 
 

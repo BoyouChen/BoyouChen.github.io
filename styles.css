@@ -6,7 +6,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Sword Art Online', sans-serif;
+  font-family: 'Calibri', 'Arial', 'Helvetica', sans-serif;
   background-color: #f5f5f5;
 }
 
@@ -88,8 +88,10 @@ section h2 {
 }
 
 section p {
-  background-color: #f0f0f0; 
-  font-size: 24px;
+  color: #636363;
+  font-weight: 100;
+  font-size: 18px;
+  text-align: justify;
   line-height: 1.5;
   margin-bottom: 20px;
 }

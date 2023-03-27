@@ -24,11 +24,24 @@ $(document).ready(function() {
   // Fade in content sections when they appear in the viewport
 function fadeInContent() {
   $('.hidden').each(function() {
+    var delay = 0;
+    if ($(this).is('header')) {
+      delay = 0;
+    } else if ($(this).is('h1')) {
+      delay = 200;
+    } else if ($(this).is('p') && $(this).parent().hasClass('intro')) {
+      delay = 400;
+    } else if ($(this).is('img')) {
+      delay = 600;
+    } else if ($(this).is('section')) {
+      delay = 800;
+    }
     if (isInViewport(this)) {
-      $(this).animate({opacity: 1}, 1000).removeClass('hidden');
+      $(this).delay(delay).animate({opacity: 1}, 1000).removeClass('hidden');
     }
   });
 }
+
 
 
   // Initial check for content sections in the viewport

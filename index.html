@@ -1,76 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Boyou Chen</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-	<link rel="stylesheet" href="styles.css">
+	<title>My Ph.D. Website</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+	<script src="script.js"></script>
 </head>
 <body>
-	<nav>
-		<div class="container">
-			<h1><a href="#">Boyou Chen</a></h1>
+	<header>
+		<nav>
+			<div class="container">
+				<h1>My Ph.D. Website</h1>
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#research">Research</a></li>
+					<li><a href="#publications">Publications</a></li>
+					<li><a href="#teaching">Teaching</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+		<section id="home">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h1>John Doe</h1>
+						<p>Ph.D. Candidate in Computer Science</p>
+						<a href="#contact" class="btn">Get in touch</a>
+					</div>
+					<div class="col">
+						<img src="myphoto.jpg" alt="John Doe">
+					</div>
+				</div>
+			</div>
+		</section>
+	</header>
+	<main>
+		<section id="about">
+			<div class="container">
+				<h2>About Me</h2>
+				<div class="row">
+					<div class="col">
+						<p>I am a Ph.D. candidate in Computer Science at XYZ University. My research interests include artificial intelligence, machine learning, and natural language processing.</p>
+						<p>My current research focuses on developing novel machine learning algorithms for natural language processing applications, such as sentiment analysis and machine translation.</p>
+						<p>In my free time, I enjoy playing soccer and traveling to new places.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="research">
+			<div class="container">
+				<h2>Research</h2>
+				<div class="row">
+					<div class="col">
+						<h3>Current Research Project</h3>
+						<p><em>Development of deep learning algorithms for sentiment analysis in social media</em></p>
+						<p>My current research project involves the development of deep learning models for sentiment analysis in social media data. The goal is to develop models that can accurately detect sentiment and emotions in social media text, which can be used for a variety of applications such as customer feedback analysis and brand reputation management.</p>
+					</div>
+					<div class="col">
+						<h3>Previous Research Project</h3>
+						<p><em>Machine translation using neural networks</em></p>
+						<p>As part of my previous research project, I developed a machine translation system using neural networks. The system was trained on parallel corpora in English and Spanish, and achieved state-of-the-art performance on standard machine translation benchmarks.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="publications">
+			<div class="container">
+			<h2>Publications</h2>
 			<ul>
-				<li><a href="#about">About Me</a></li>
-				<li><a href="#research">Research</a></li>
-				<li><a href="#publications">Publications</a></li>
-				<li><a href="#contact">Contact Me</a></li>
+				<li>Doe, J., Smith, J., &amp; Johnson, R. (2021). A deep learning approach to sentiment analysis in social media. <em>Journal of Artificial Intelligence Research</em>, 25(1), 12-25.</li>
+				<li>Doe, J., Garcia, M., &amp; Kim, S. (2020). A neural machine translation system for English-Spanish translation. <em>Proceedings of the Annual Meeting of the Association for Computational Linguistics</em>, 75-82.</li>
+				<li>Doe, J., &amp; Lee, K. (2019). A survey of natural language processing techniques for sentiment analysis. <em>ACM Computing Surveys</em>, 51(2), 1-30.</li>
 			</ul>
 		</div>
-	</nav>
-
-	<header id="home">
-		<div class="overlay">
-			<div class="container">
-				<h1>Welcome to My Ph.D. Website</h1>
-				<p class="lead">I am a Ph.D. student studying in the field of [insert your field of study].</p>
-				<img src="Personal.jpeg" alt="Profile Picture">
+	</section>
+	<section id="teaching">
+		<div class="container">
+			<h2>Teaching</h2>
+			<div class="row">
+				<div class="col">
+					<h3>Teaching Assistant</h3>
+					<p><em>Introduction to Artificial Intelligence</em>, Fall 2021</p>
+					<p>As a teaching assistant for this course, I was responsible for grading assignments and exams, leading discussion sections, and providing one-on-one tutoring for students who needed extra help.</p>
+				</div>
+				<div class="col">
+					<h3>Instructor</h3>
+					<p><em>Natural Language Processing for Beginners</em>, Spring 2022</p>
+					<p>As the instructor for this course, I developed the syllabus, designed and graded assignments and exams, and led class discussions and lectures. The course covered the basics of natural language processing, including text preprocessing, language modeling, and sentiment analysis.</p>
+				</div>
 			</div>
 		</div>
-	</header>
-
-	<section id="about" class="container">
-		<h2>About Me</h2>
-		<hr>
-		<p>I am currently a Ph.D. student at [insert your university name], where I am studying [insert your field of study]. My research interests include [insert your research interests]. In my free time, I enjoy [insert your hobbies or interests].</p>
 	</section>
+	<section id="contact">
+		<div class="container">
+			<h2>Contact Me</h2>
+			<div class="row">
+				<div class="col">
+					<form>
+						<label for="name">Name:</label>
+						<input type="text" id="name" name="name" required>
 
-	<section id="research" class="container">
-		<h2>Research</h2>
-		<hr>
-		<p>My current research focuses on [insert your research topic]. I am working with [insert your research advisor or team members] to [insert your research goals or objectives].</p>
+						<label for="email">Email:</label>
+						<input type="email" id="email" name="email" required>
+
+						<label for="message">Message:</label>
+						<textarea id="message" name="message" required></textarea>
+
+						<input type="submit" value="Send" class="btn">
+					</form>
+				</div>
+				<div class="col">
+					<h3>Connect with Me</h3>
+					<ul class="social-icons">
+						<li><a href="#"><i class="fa fa-envelope"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-github"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</section>
-
-	<section id="publications" class="container">
-		<h2>Publications</h2>
-		<hr>
-		<ul>
-			<li>[Insert publication 1]</li>
-			<li>[Insert publication 2]</li>
-			<li>[Insert publication 3]</li>
-			<li>[Insert publication 4]</li>
-		</ul>
-	</section>
-
-	<section id="contact" class="container">
-		<h2>Contact Me</h2>
-		<hr>
-		<p>Feel free to contact me at [insert your email address] or follow me on [insert your social media handle(s)]:</p>
-		<ul class="social-icons">
-			<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-			<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-			<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-			<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-		</ul>
-	</section>
-
-	<footer class="container">
-		<p>&copy; Boyou Chen 2023. All rights reserved.</p>
-	</footer>
-
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="script.js"></script>
-</body>
-</html>
+</main>

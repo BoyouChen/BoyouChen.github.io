@@ -1,6 +1,6 @@
 // smooth scrolling on click of nav links
 $(document).ready(function () {
-	$('a.nav-link').on('click', function (event) {
+	$('a').on('click', function (event) {
 		if (this.hash !== "") {
 			event.preventDefault();
 			var hash = this.hash;

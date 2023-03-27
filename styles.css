@@ -87,6 +87,13 @@ section h2 {
   margin-bottom: 20px;
 }
 
+
+section h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
 section p {
   color: #636363;
   font-weight: 100;

@@ -5,47 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boyou Chen</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
 </head>
 <body>
-  <header class="jumbotron text-center" id="header">
-    <h1 class="display-4 animate__animated animate__fadeIn">Boyou Chen</h1>
-    <div class="text">
-      <span class="word animate__animated animate__fadeIn">Safety</span>
-      <span class="word animate__animated animate__fadeOut">Intelligence</span>
-      <span class="word animate__animated animate__fadeOut">Efficiency</span>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Boyou Chen</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    </header>
-    <main>
-        <section id="about">
-            <div class="about-me">
-                <h2>About Me</h2>
-                <img src="Personal.jpeg" alt="Boyou Chen" class="my-photo">
-                <p>
-                    Boyou Chen is currently a Ph.D. student in the Department of Computer Science at XYZ University.
-                </p>
-            </div>
-        </section>
-        <section id="publications">
-            <h2>Publications</h2>
-            <ul>
-                <li>Publication 1</li>
-                <li>Publication 2</li>
-                <li>Publication 3</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: myemail@example.com</p>
-        </section>
-    </main>
-    <footer>
-        <p>Boyou Chen &copy; 2023. All rights reserved.</p>
-    </footer>
-</body>
+  </nav>
 
+  <section id="about" class="container py-5">
+    <h2>About</h2>
+    <p>
+      <!-- Add your 'about me' content here -->
+    </p>
+  </section>
+
+  <section id="projects" class="container py-5">
+    <h2>Projects</h2>
+    <div class="row">
+      <!-- Add your project cards here -->
+    </div>
+  </section>
+
+  <section id="contact" class="container py-5">
+    <h2>Contact</h2>
+    <p>
+      <!-- Add your contact information here -->
+    </p>
+  </section>
+
+</body>
 </html>

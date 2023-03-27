@@ -1,16 +1,14 @@
+// smooth scrolling on click of nav links
 $(document).ready(function () {
-  let words = $('.word');
-  let currentIndex = 0;
-
-  function changeWord() {
-    $(words[currentIndex]).addClass('animate__fadeOut');
-
-    setTimeout(function () {
-      $(words[currentIndex]).removeClass('animate__fadeIn animate__fadeOut');
-      currentIndex = (currentIndex + 1) % words.length;
-      $(words[currentIndex]).addClass('animate__fadeIn');
-    }, 1000); // match the animation-duration specified in the CSS
-  }
-
-  setInterval(changeWord, 3000);
+	$('a.nav-link').on('click', function (event) {
+		if (this.hash !== "") {
+			event.preventDefault();
+			var hash = this.hash;
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			}, 800, function () {
+				window.location.hash = hash;
+			});
+		}
+	});
 });

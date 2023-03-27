@@ -87,3 +87,17 @@ section p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+/* ... other styles ... */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+}

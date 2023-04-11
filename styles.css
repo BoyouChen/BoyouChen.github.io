@@ -113,6 +113,25 @@ section p1 {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+section p2 {
+  color: #636363;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 14px;
+  text-align: justify;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+section p3 {
+  color: #636363;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 14px;
+  text-align: justify;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
 /* ... other styles ... */
 
 footer {

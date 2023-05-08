@@ -56,10 +56,9 @@ const animatedText = document.getElementById("animated-text");
 let currentWordIndex = 0;
 let currentLetterIndex = 0;
 let currentWord = words[currentWordIndex];
-let scrambleTimeout;
-let unscrambleTimeout;
+let animationInterval;
 
-function scrambleText() {
+function animateText() {
   let scrambledText = "";
   for (let i = 0; i < currentWord.length; i++) {
     if (i <= currentLetterIndex) {
@@ -71,38 +70,14 @@ function scrambleText() {
     }
   }
   animatedText.textContent = scrambledText;
-  currentLetterIndex++;
 
   if (currentLetterIndex < currentWord.length) {
-    scrambleTimeout = setTimeout(scrambleText, 100);
+    currentLetterIndex++;
   } else {
     currentLetterIndex = 0;
     currentWordIndex = (currentWordIndex + 1) % words.length;
     currentWord = words[currentWordIndex];
-    unscrambleTimeout = setTimeout(unscrambleText, 1500);
   }
 }
 
-function unscrambleText() {
-  let unscrambledText = "";
-  for (let i = 0; i < currentWord.length; i++) {
-    if (i < currentLetterIndex) {
-      unscrambledText += currentWord[i];
-    } else {
-      unscrambledText += String.fromCharCode(
-        Math.floor(Math.random() * (126 - 33) + 33)
-      );
-    }
-  }
-  animatedText.textContent = unscrambledText;
-  currentLetterIndex++;
-
-  if (currentLetterIndex <= currentWord.length) {
-    unscrambleTimeout = setTimeout(unscrambleText, 100);
-  } else {
-    currentLetterIndex = 0;
-    scrambleTimeout = setTimeout(scrambleText, 1500);
-  }
-}
-
-scrambleText();
+animationInterval = setInterval(animateText, 100);

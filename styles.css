@@ -167,10 +167,12 @@ section p3 {
 }
 
 #text-container {
-  display: inline-flex;
-  align-items: flex-end;
-  height: 3.5rem; /* Adjust the height to match the font size and line height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem; /* Adjust the height to match the font size and line height */
   position: relative;
+  
 }
 
 #animated-text {
@@ -179,17 +181,10 @@ section p3 {
   color: #000000;
   transition: all 0.2s ease;
   min-width: 10rem;
+    margin-bottom: 16px;
 }
 
-#animated-text::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  height: 4px;
-  width: var(--underline-width, 100%);
-  background-color: #000000;
-}
+
 /* ... other styles ... */
 
 footer {

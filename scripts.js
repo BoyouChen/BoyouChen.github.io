@@ -51,7 +51,7 @@ function fadeInContent() {
   $(window).scroll(fadeInContent);
 });
 
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
   const words = ["Safety", "Efficiency", "Automation"];
   const animatedText = document.getElementById("animated-text");
   let currentWordIndex = 0;
@@ -82,4 +82,4 @@ window.onload = function () {
   }
 
   animationInterval = setInterval(animateText, 100);
-};
+});

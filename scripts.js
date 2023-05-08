@@ -57,12 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentWordIndex = 0;
   let currentLetterIndex = 0;
   let direction = 1;
-  let text = "";
 
-  function nextLetter() {
+  function animateText() {
     if (direction === 1) {
       if (currentLetterIndex < words[currentWordIndex].length) {
-        text += words[currentWordIndex].charAt(currentLetterIndex);
+        animatedText.textContent += words[currentWordIndex].charAt(currentLetterIndex);
         currentLetterIndex++;
       } else {
         setTimeout(() => {
@@ -71,8 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     } else {
       if (currentLetterIndex >= 0) {
-        text = text.slice(0, -1);
-        text += String.fromCharCode(
+        animatedText.textContent = animatedText.textContent.slice(0, -1);
+        animatedText.textContent += String.fromCharCode(
           Math.floor(Math.random() * (126 - 33) + 33)
         );
         currentLetterIndex--;
@@ -80,13 +79,12 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
           direction = 1;
           currentWordIndex = (currentWordIndex + 1) % words.length;
-          text = "";
+          animatedText.textContent = "";
           currentLetterIndex = 0;
         }, 1000);
       }
     }
-    animatedText.textContent = text;
   }
 
-  setInterval(nextLetter, 200);
+  setInterval(animateText, 200);
 });

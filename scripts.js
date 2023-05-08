@@ -50,3 +50,59 @@ function fadeInContent() {
   // Listen for scroll events and trigger fadeInContent()
   $(window).scroll(fadeInContent);
 });
+
+const words = ["Safety", "Efficiency", "Automation"];
+const animatedText = document.getElementById("animated-text");
+let currentWordIndex = 0;
+let currentLetterIndex = 0;
+let currentWord = words[currentWordIndex];
+let scrambleTimeout;
+let unscrambleTimeout;
+
+function scrambleText() {
+  let scrambledText = "";
+  for (let i = 0; i < currentWord.length; i++) {
+    if (i <= currentLetterIndex) {
+      scrambledText += currentWord[i];
+    } else {
+      scrambledText += String.fromCharCode(
+        Math.floor(Math.random() * (126 - 33) + 33)
+      );
+    }
+  }
+  animatedText.textContent = scrambledText;
+  currentLetterIndex++;
+
+  if (currentLetterIndex < currentWord.length) {
+    scrambleTimeout = setTimeout(scrambleText, 100);
+  } else {
+    currentLetterIndex = 0;
+    currentWordIndex = (currentWordIndex + 1) % words.length;
+    currentWord = words[currentWordIndex];
+    unscrambleTimeout = setTimeout(unscrambleText, 1500);
+  }
+}
+
+function unscrambleText() {
+  let unscrambledText = "";
+  for (let i = 0; i < currentWord.length; i++) {
+    if (i < currentLetterIndex) {
+      unscrambledText += currentWord[i];
+    } else {
+      unscrambledText += String.fromCharCode(
+        Math.floor(Math.random() * (126 - 33) + 33)
+      );
+    }
+  }
+  animatedText.textContent = unscrambledText;
+  currentLetterIndex++;
+
+  if (currentLetterIndex <= currentWord.length) {
+    unscrambleTimeout = setTimeout(unscrambleText, 100);
+  } else {
+    currentLetterIndex = 0;
+    scrambleTimeout = setTimeout(scrambleText, 1500);
+  }
+}
+
+scrambleText();

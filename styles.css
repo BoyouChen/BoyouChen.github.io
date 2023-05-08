@@ -132,6 +132,22 @@ section p3 {
   margin-bottom: 20px;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.social-links a:hover {
+  color: #0077b5; /* Change this to the desired hover color */
+}
+
 /* ... other styles ... */
 
 footer {

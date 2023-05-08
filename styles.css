@@ -167,6 +167,12 @@ section p3 {
 }
 .changing-text {
   font-size: 24px;
+  font-family: 'Calibri', 'Arial', 'Helvetica', sans-serif;
+  position: relative;
+}
+
+.animated-text {
+  position: absolute;
 }
 
 

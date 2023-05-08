@@ -55,20 +55,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const words = ["Safety", "Efficiency", "Automation"];
   const animatedText = document.getElementById("animated-text");
   let currentWordIndex = 0;
-  let currentLetterIndex = 0;
+  let currentLetterIndex = -1;
   let currentWord = words[currentWordIndex];
+  let direction = 1;
   let animationInterval;
 
   function animateText() {
-    if (currentLetterIndex <= currentWord.length) {
-      animatedText.textContent = currentWord.slice(0, currentLetterIndex);
-      currentLetterIndex++;
+    if (direction === 1) {
+      if (currentLetterIndex < currentWord.length) {
+        animatedText.textContent = currentWord.slice(0, currentLetterIndex + 1);
+        currentLetterIndex++;
+      } else {
+        setTimeout(() => {
+          direction = -1;
+        }, 1000); // 1-second pause at the end of the word
+      }
     } else {
-      setTimeout(() => {
-        currentLetterIndex = 0;
-        currentWordIndex = (currentWordIndex + 1) % words.length;
-        currentWord = words[currentWordIndex];
-      }, 1000); // 1-second pause between words
+      if (currentLetterIndex >= 0) {
+        let scrambledText = currentWord.slice(0, currentLetterIndex);
+        scrambledText += String.fromCharCode(
+          Math.floor(Math.random() * (126 - 33) + 33)
+        );
+        animatedText.textContent = scrambledText;
+        currentLetterIndex--;
+      } else {
+        setTimeout(() => {
+          currentWordIndex = (currentWordIndex + 1) % words.length;
+          currentWord = words[currentWordIndex];
+          direction = 1;
+        }, 1000); // 1-second pause at the beginning of the word
+      }
     }
   }
 

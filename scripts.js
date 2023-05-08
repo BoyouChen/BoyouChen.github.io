@@ -57,34 +57,32 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentWordIndex = 0;
   let currentLetterIndex = 0;
   let direction = 1;
+  let text = "";
 
-  function animateText() {
-    if (direction === 1) {
-      if (currentLetterIndex < words[currentWordIndex].length) {
-        animatedText.textContent += words[currentWordIndex].charAt(currentLetterIndex);
-        currentLetterIndex++;
-      } else {
-        setTimeout(() => {
-          direction = -1;
-        }, 1000);
-      }
-    } else {
-      if (currentLetterIndex >= 0) {
-        animatedText.textContent = animatedText.textContent.slice(0, -1);
-        animatedText.textContent += String.fromCharCode(
-          Math.floor(Math.random() * (126 - 33) + 33)
-        );
-        currentLetterIndex--;
-      } else {
-        setTimeout(() => {
-          direction = 1;
-          currentWordIndex = (currentWordIndex + 1) % words.length;
-          animatedText.textContent = "";
-          currentLetterIndex = 0;
-        }, 1000);
+  async function animateText() {
+    while (true) {
+      for (let wordIndex = 0; wordIndex < words.length; wordIndex++) {
+        const word = words[wordIndex];
+
+        for (let letterIndex = 0; letterIndex <= word.length; letterIndex++) {
+          text = word.slice(0, letterIndex);
+          animatedText.textContent = text;
+          await new Promise((resolve) => setTimeout(resolve, 200));
+        }
+
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
+        for (let letterIndex = word.length; letterIndex >= 0; letterIndex--) {
+          text = word.slice(0, letterIndex);
+          text += String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33));
+          animatedText.textContent = text;
+          await new Promise((resolve) => setTimeout(resolve, 200));
+        }
+
+        await new Promise((resolve) => setTimeout(resolve, 1000));
       }
     }
   }
 
-  setInterval(animateText, 200);
+  animateText();
 });

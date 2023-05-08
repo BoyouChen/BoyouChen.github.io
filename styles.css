@@ -169,16 +169,15 @@ section p3 {
 #text-container {
   display: inline-flex;
   align-items: flex-end;
-  height: 3.5rem; /* Adjust the height to match the font size and line height */
   position: relative;
 }
 
 #animated-text {
-  font-family: 'Roboto Mono', monospace;
   font-size: 3rem;
   font-weight: 700;
   color: #000000;
   transition: all 0.2s ease;
+  min-width: 10rem;
 }
 
 #animated-text::after {

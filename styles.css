@@ -166,6 +166,13 @@ section p3 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
+#text-container {
+  display: inline-flex;
+  align-items: flex-end;
+  height: 3.5rem; /* Adjust the height to match the font size and line height */
+  position: relative;
+}
+
 #animated-text {
   font-family: 'Roboto Mono', monospace;
   font-size: 3rem;

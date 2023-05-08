@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const words = ["Safety", "Efficiency", "Automation"];
   const animatedText = document.getElementById("animated-text");
   let currentWordIndex = 0;
-  let currentLetterIndex = -1;
+  let currentLetterIndex = 0;
   let currentWord = words[currentWordIndex];
   let direction = 1;
   let animationInterval;
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
           currentWordIndex = (currentWordIndex + 1) % words.length;
           currentWord = words[currentWordIndex];
           direction = 1;
-          currentLetterIndex = 0; // Set currentLetterIndex to 0 instead of incrementing
+          currentLetterIndex = 0; // Set currentLetterIndex to 0
         }, 1000); // 1-second pause at the beginning of the word
       }
     }

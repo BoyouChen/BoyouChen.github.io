@@ -56,38 +56,37 @@ document.addEventListener("DOMContentLoaded", function () {
   const animatedText = document.getElementById("animated-text");
   let currentWordIndex = 0;
   let currentLetterIndex = 0;
-  let currentWord = words[currentWordIndex];
   let direction = 1;
-  let animationInterval;
+  let text = "";
 
-  function animateText() {
+  function nextLetter() {
     if (direction === 1) {
-      if (currentLetterIndex < currentWord.length) {
-        animatedText.textContent = currentWord.slice(0, currentLetterIndex + 1);
+      if (currentLetterIndex < words[currentWordIndex].length) {
+        text += words[currentWordIndex].charAt(currentLetterIndex);
         currentLetterIndex++;
       } else {
         setTimeout(() => {
           direction = -1;
-        }, 1000); // 1-second pause at the end of the word
+        }, 1000);
       }
     } else {
       if (currentLetterIndex >= 0) {
-        let scrambledText = currentWord.slice(0, currentLetterIndex);
-        scrambledText += String.fromCharCode(
+        text = text.slice(0, -1);
+        text += String.fromCharCode(
           Math.floor(Math.random() * (126 - 33) + 33)
         );
-        animatedText.textContent = scrambledText;
         currentLetterIndex--;
       } else {
         setTimeout(() => {
-          currentWordIndex = (currentWordIndex + 1) % words.length;
-          currentWord = words[currentWordIndex];
           direction = 1;
-          currentLetterIndex = 0; // Set currentLetterIndex to 0
-        }, 1000); // 1-second pause at the beginning of the word
+          currentWordIndex = (currentWordIndex + 1) % words.length;
+          text = "";
+          currentLetterIndex = 0;
+        }, 1000);
       }
     }
+    animatedText.textContent = text;
   }
 
-  animationInterval = setInterval(animateText, 200); // 200ms between each letter
+  setInterval(nextLetter, 200);
 });

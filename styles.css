@@ -132,21 +132,40 @@ section p3 {
   margin-bottom: 20px;
 }
 
-.social-links {
+.social-media-icons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-.social-links a {
+.social-media-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
   text-decoration: none;
-  color: #333;
-  font-size: 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.social-links a:hover {
-  color: #0077b5; /* Change this to the desired hover color */
+.social-media-icons .linkedin-icon {
+  background-color: #0077b5;
+  color: white;
 }
+
+.social-media-icons .instagram-icon {
+  background-image: linear-gradient(45deg, #fd1d1d, #fcb045);
+  color: white;
+}
+
+.social-media-icons a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
 
 /* ... other styles ... */
 

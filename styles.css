@@ -165,6 +165,10 @@ section p3 {
   transform: translateY(-5px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
+.changing-text {
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+}
 
 
 /* ... other styles ... */

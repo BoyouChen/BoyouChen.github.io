@@ -52,37 +52,33 @@ function fadeInContent() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const words = ["Safety", "Efficiency", "Automation"];
-  const animatedText = document.getElementById("animated-text");
-  let currentWordIndex = 0;
-  let currentLetterIndex = 0;
-  let direction = 1;
-  let text = "";
+  const words = ['Safety', 'Efficiency', 'Automation', 11];
+const animatedText = document.getElementById('animated-text');
 
-  async function animateText() {
-    while (true) {
-      for (let wordIndex = 0; wordIndex < words.length; wordIndex++) {
-        const word = words[wordIndex];
+function getRandomChar() {
+  return String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33));
+}
 
-        for (let letterIndex = 0; letterIndex <= word.length; letterIndex++) {
-          text = word.slice(0, letterIndex);
-          animatedText.textContent = text;
-          await new Promise((resolve) => setTimeout(resolve, 200));
-        }
+async function animateText(word) {
+  for (let i = 0; i < word.length; i++) {
+    for (let j = 0; j < 10; j++) {
+      animatedText.textContent = word.slice(0, i) + getRandomChar() + word.slice(i + 1);
+      await new Promise((resolve) => setTimeout(resolve, 60));
+    }
+  }
+  animatedText.textContent = word;
+}
 
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-
-        for (let letterIndex = word.length; letterIndex >= 0; letterIndex--) {
-          text = word.slice(0, letterIndex);
-          text += String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33));
-          animatedText.textContent = text;
-          await new Promise((resolve) => setTimeout(resolve, 200));
-        }
-
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+(async function loop() {
+  while (true) {
+    for (const word of words) {
+      if (typeof word === 'number') {
+        const underlineWidth = (word / words[words.length - 1]) * 100;
+        animatedText.style.setProperty('--underline-width', `${underlineWidth}%`);
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+      } else {
+        await animateText(word);
       }
     }
   }
-
-  animateText();
-});
+})();

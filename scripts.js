@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
           currentWordIndex = (currentWordIndex + 1) % words.length;
           currentWord = words[currentWordIndex];
           direction = 1;
+          currentLetterIndex++; // Add this line to fix the issue
         }, 1000); // 1-second pause at the beginning of the word
       }
     }

@@ -51,37 +51,26 @@ function fadeInContent() {
   $(window).scroll(fadeInContent);
 });
 
-(function() {
-  document.addEventListener("DOMContentLoaded", function () {
-    const words = ["Safety", "Efficiency", "Automation"];
-    const animatedText = document.getElementById("animated-text");
-    let currentWordIndex = 0;
-    let currentLetterIndex = 0;
-    let currentWord = words[currentWordIndex];
-    let animationInterval;
-  
-    function animateText() {
-      let scrambledText = "";
-      for (let i = 0; i < currentWord.length; i++) {
-        if (i <= currentLetterIndex) {
-          scrambledText += currentWord[i];
-        } else {
-          scrambledText += String.fromCharCode(
-            Math.floor(Math.random() * (126 - 33) + 33)
-          );
-        }
-      }
-      animatedText.textContent = scrambledText;
-  
-      if (currentLetterIndex < currentWord.length) {
-        currentLetterIndex++;
-      } else {
+document.addEventListener("DOMContentLoaded", function () {
+  const words = ["Safety", "Efficiency", "Automation"];
+  const animatedText = document.getElementById("animated-text");
+  let currentWordIndex = 0;
+  let currentLetterIndex = 0;
+  let currentWord = words[currentWordIndex];
+  let animationInterval;
+
+  function animateText() {
+    if (currentLetterIndex <= currentWord.length) {
+      animatedText.textContent = currentWord.slice(0, currentLetterIndex);
+      currentLetterIndex++;
+    } else {
+      setTimeout(() => {
         currentLetterIndex = 0;
         currentWordIndex = (currentWordIndex + 1) % words.length;
         currentWord = words[currentWordIndex];
-      }
+      }, 1000); // 1-second pause between words
     }
-  
-    animationInterval = setInterval(animateText, 100);
-  });
-})();
+  }
+
+  animationInterval = setInterval(animateText, 200); // 200ms between each letter
+});

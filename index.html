@@ -25,6 +25,9 @@
     <p class="hidden" style="opacity: 0;">Contact Me: boyou@umich.edu</p>
     <img src="Personal.jpeg" alt="My Photo" class="hidden" style="opacity: 0;">
   </div>
+          <div class="changing-text">
+  <span id="animated-text"></span>
+</div>
   <div class="social-media-icons">
   <a href="https://www.linkedin.com/in/boyou-chen-2b9505275/" target="_blank" rel="noopener noreferrer" class="linkedin-icon">
     <i class="fab fa-linkedin"></i>
@@ -51,9 +54,6 @@
       </section>
 <section id="research" class="hidden" style="opacity: 0;">
         <h2>Recent Research</h2>
-        <div class="changing-text">
-  <span id="animated-text"></span>
-</div>
         <p>Jun.2019-Dec.2021 Research on Monitoring and Warning Technology of Distracted Driving Behavior Considering Traffic Flow (supervised by Dr. Yuting Zhang)</p>
       <p>Jun.2018-Dec.2021 National Innovation and Entrepreneurship Training Program for College Students (201910710017, 201910710185X, 201810710008, S202010710019)</p>
       <p>--- Total Funding: 40,000 CNY</p>
@@ -74,63 +74,5 @@
         <footer>
       <p>&copy; 2023 Boyou Chen. All rights reserved.</p>
     </footer>
-
-  <script
-    const words = ["Safety", "Efficiency", "Automation"];
-const animatedText = document.getElementById("animated-text");
-let currentWordIndex = 0;
-let currentLetterIndex = 0;
-let currentWord = words[currentWordIndex];
-let scrambleTimeout;
-let unscrambleTimeout;
-
-function scrambleText() {
-  let scrambledText = "";
-  for (let i = 0; i < currentWord.length; i++) {
-    if (i <= currentLetterIndex) {
-      scrambledText += currentWord[i];
-    } else {
-      scrambledText += String.fromCharCode(
-        Math.floor(Math.random() * (126 - 33) + 33)
-      );
-    }
-  }
-  animatedText.textContent = scrambledText;
-  currentLetterIndex++;
-
-  if (currentLetterIndex < currentWord.length) {
-    scrambleTimeout = setTimeout(scrambleText, 100);
-  } else {
-    currentLetterIndex = 0;
-    currentWordIndex = (currentWordIndex + 1) % words.length;
-    currentWord = words[currentWordIndex];
-    unscrambleTimeout = setTimeout(unscrambleText, 1500);
-  }
-}
-
-function unscrambleText() {
-  let unscrambledText = "";
-  for (let i = 0; i < currentWord.length; i++) {
-    if (i < currentLetterIndex) {
-      unscrambledText += currentWord[i];
-    } else {
-      unscrambledText += String.fromCharCode(
-        Math.floor(Math.random() * (126 - 33) + 33)
-      );
-    }
-  }
-  animatedText.textContent = unscrambledText;
-  currentLetterIndex++;
-
-  if (currentLetterIndex <= currentWord.length) {
-    unscrambleTimeout = setTimeout(unscrambleText, 100);
-  } else {
-    currentLetterIndex = 0;
-    scrambleTimeout = setTimeout(scrambleText, 1500);
-  }
-}
-
-scrambleText();>
-</script>
   </body>
 </html>

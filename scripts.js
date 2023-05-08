@@ -51,33 +51,35 @@ function fadeInContent() {
   $(window).scroll(fadeInContent);
 });
 
-const words = ["Safety", "Efficiency", "Automation"];
-const animatedText = document.getElementById("animated-text");
-let currentWordIndex = 0;
-let currentLetterIndex = 0;
-let currentWord = words[currentWordIndex];
-let animationInterval;
+window.onload = function () {
+  const words = ["Safety", "Efficiency", "Automation"];
+  const animatedText = document.getElementById("animated-text");
+  let currentWordIndex = 0;
+  let currentLetterIndex = 0;
+  let currentWord = words[currentWordIndex];
+  let animationInterval;
 
-function animateText() {
-  let scrambledText = "";
-  for (let i = 0; i < currentWord.length; i++) {
-    if (i <= currentLetterIndex) {
-      scrambledText += currentWord[i];
+  function animateText() {
+    let scrambledText = "";
+    for (let i = 0; i < currentWord.length; i++) {
+      if (i <= currentLetterIndex) {
+        scrambledText += currentWord[i];
+      } else {
+        scrambledText += String.fromCharCode(
+          Math.floor(Math.random() * (126 - 33) + 33)
+        );
+      }
+    }
+    animatedText.textContent = scrambledText;
+
+    if (currentLetterIndex < currentWord.length) {
+      currentLetterIndex++;
     } else {
-      scrambledText += String.fromCharCode(
-        Math.floor(Math.random() * (126 - 33) + 33)
-      );
+      currentLetterIndex = 0;
+      currentWordIndex = (currentWordIndex + 1) % words.length;
+      currentWord = words[currentWordIndex];
     }
   }
-  animatedText.textContent = scrambledText;
 
-  if (currentLetterIndex < currentWord.length) {
-    currentLetterIndex++;
-  } else {
-    currentLetterIndex = 0;
-    currentWordIndex = (currentWordIndex + 1) % words.length;
-    currentWord = words[currentWordIndex];
-  }
-}
-
-animationInterval = setInterval(animateText, 100);
+  animationInterval = setInterval(animateText, 100);
+};

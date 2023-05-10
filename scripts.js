@@ -67,19 +67,19 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let letterIndex = 0; letterIndex <= word.length; letterIndex++) {
           text = word.slice(0, letterIndex);
           animatedText.textContent = text;
-          await new Promise((resolve) => setTimeout(resolve, 200));
+          await new Promise((resolve) => setTimeout(resolve, 100));
         }
 
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 800));
 
         for (let letterIndex = word.length; letterIndex >= 0; letterIndex--) {
           text = word.slice(0, letterIndex);
           text += String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33));
           animatedText.textContent = text;
-          await new Promise((resolve) => setTimeout(resolve, 200));
+          await new Promise((resolve) => setTimeout(resolve, 100));
         }
 
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 800));
       }
     }
   }

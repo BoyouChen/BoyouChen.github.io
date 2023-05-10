@@ -52,7 +52,7 @@ function fadeInContent() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const words = ["Safety", "Efficiency", "Automation"];
+  const words = ["Human Factors", "Transportation Safety", "Driving Behaviour","Machine Learning"];
   const animatedText = document.getElementById("animated-text");
   let currentWordIndex = 0;
   let currentLetterIndex = 0;

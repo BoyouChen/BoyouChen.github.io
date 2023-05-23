@@ -161,6 +161,10 @@ section p3 {
   color: white;
 }
 
+.social-media-icons .google-scholar-icon {
+  background-image: linear-gradient(45deg, #c600da, #f9d8ff);
+  color: white;
+
 .social-media-icons a:hover {
   transform: translateY(-5px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);

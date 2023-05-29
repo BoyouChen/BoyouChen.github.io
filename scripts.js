@@ -82,6 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentLetterIndex === -1) {
         currentWordIndex = (currentWordIndex + 1) % words.length;
         currentLetterIndex = 0;
+        text = "";
+        await new Promise((resolve) => setTimeout(resolve, 800));
       }
 
       await new Promise((resolve) => setTimeout(resolve, 100));

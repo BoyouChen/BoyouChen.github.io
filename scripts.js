@@ -80,10 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Transition to the next word
       if (currentLetterIndex === -1) {
-        await new Promise((resolve) => setTimeout(resolve, 800));
-        currentWordIndex = (currentWordIndex + 1) % words.length;
-        currentLetterIndex = 0;
-        text = "";
+        const nextWordIndex = (currentWordIndex + 1) % words.length;
+        const nextWord = words[nextWordIndex];
+        const transitionLetter = nextWord[0];
+        text = transitionLetter;
+        currentLetterIndex++;
+        currentWordIndex = nextWordIndex;
       }
 
       await new Promise((resolve) => setTimeout(resolve, 100));

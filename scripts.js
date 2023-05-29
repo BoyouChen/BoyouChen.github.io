@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
       for (let wordIndex = 0; wordIndex < words.length; wordIndex++) {
         const word = words[wordIndex];
 
+        // Forward animation: reveal letters
         for (let letterIndex = 0; letterIndex <= word.length; letterIndex++) {
           text = word.slice(0, letterIndex);
           animatedText.textContent = text;
@@ -72,14 +73,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         await new Promise((resolve) => setTimeout(resolve, 800));
 
+        // Backward animation: randomize letters
+        let randomizedText = text;
         for (let letterIndex = word.length; letterIndex >= 0; letterIndex--) {
-          text = word.slice(0, letterIndex);
-          text += String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33));
-          animatedText.textContent = text;
+          randomizedText = word.slice(0, letterIndex);
+          randomizedText += String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33));
+          animatedText.textContent = randomizedText;
           await new Promise((resolve) => setTimeout(resolve, 100));
         }
 
+        // Transition to the next word smoothly
         await new Promise((resolve) => setTimeout(resolve, 800));
+        animatedText.textContent = "";
       }
     }
   }

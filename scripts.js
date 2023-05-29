@@ -52,7 +52,7 @@ function fadeInContent() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const words = ["Human Factors", "Transportation Safety", "Driving Behaviour","Machine Learning"];
+  const words = ["Human Factors", "Transportation Safety", "Driving Behaviour", "Machine Learning"];
   const animatedText = document.getElementById("animated-text");
   let currentWordIndex = 0;
   let currentLetterIndex = 0;
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Forward animation: reveal letters
       if (currentLetterIndex < word.length) {
-        text += word[currentLetterIndex];
+        text = word.slice(0, currentLetterIndex + 1);
         animatedText.textContent = text;
         currentLetterIndex++;
       }
@@ -80,12 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Transition to the next word
       if (currentLetterIndex === -1) {
-        const nextWordIndex = (currentWordIndex + 1) % words.length;
-        const nextWord = words[nextWordIndex];
-        const transitionLetter = nextWord[0];
-        text = transitionLetter;
-        currentLetterIndex++;
-        currentWordIndex = nextWordIndex;
+        currentWordIndex = (currentWordIndex + 1) % words.length;
+        currentLetterIndex = 0;
       }
 
       await new Promise((resolve) => setTimeout(resolve, 100));

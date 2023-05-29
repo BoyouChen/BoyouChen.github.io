@@ -193,7 +193,7 @@ section p3 {
 
 .school-emblem {
   display: inline-block;
-  width: 50px; /* Adjust the width to fit your emblem's size */
+  width: 90px; /* Adjust the width to fit your emblem's size */
   margin-right: 10px; /* Adds some space between the emblem and the text */
   vertical-align: middle; /* Aligns the emblem vertically with the text */
 }

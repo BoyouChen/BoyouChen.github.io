@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let direction = 1;
   let text = "";
   let speed = 500; // Initial animation speed in milliseconds
-  let speedChangeRate = 0.95; // Rate at which the speed changes
+  let speedChangeRate = 0.9; // Rate at which the speed changes
 
   async function animateText() {
     while (true) {
@@ -78,19 +78,18 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           direction = -1;
           currentLetterIndex--;
-          text = ""; // Reset text for backward animation
           speed = 100; // Reset speed for backward animation
         }
       } else {
         // Backward animation: remove letters
-        if (currentLetterIndex >= 0) {
+        if (currentLetterIndex > 0) {
           text = text.slice(0, -1);
           currentLetterIndex--;
           speed /= speedChangeRate; // Gradually speed up
         } else {
           direction = 1;
           currentWordIndex = (currentWordIndex + 1) % words.length;
-          text = ""; // Reset text for next word
+          text = "";
           speed = 500; // Reset speed for next word
         }
       }

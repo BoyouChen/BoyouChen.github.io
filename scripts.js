@@ -82,7 +82,15 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentLetterIndex === -1) {
         currentWordIndex = (currentWordIndex + 1) % words.length;
         currentLetterIndex = 0;
-        text = words[currentWordIndex].charAt(0);
+
+        // Randomize the letters of the previous word
+        const previousWord = words[(currentWordIndex + words.length - 1) % words.length];
+        let randomizedText = "";
+        for (let i = 0; i < previousWord.length; i++) {
+          randomizedText += String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33));
+        }
+        animatedText.textContent = randomizedText;
+        
         await new Promise((resolve) => setTimeout(resolve, 800));
       }
 

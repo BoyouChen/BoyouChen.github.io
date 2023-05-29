@@ -62,36 +62,29 @@ document.addEventListener("DOMContentLoaded", function () {
   async function animateText() {
     while (true) {
       const word = words[currentWordIndex];
+      const randomizedText = text + String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33));
 
-      // Forward animation: reveal letters
-      if (currentLetterIndex < word.length) {
-        text = word.slice(0, currentLetterIndex + 1);
-        animatedText.textContent = text;
-        currentLetterIndex++;
-      }
+      // Update the text content
+      animatedText.textContent = randomizedText;
 
-      // Backward animation: randomize letters
-      else if (currentLetterIndex >= word.length) {
-        let randomizedText = text;
-        randomizedText += String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33));
-        animatedText.textContent = randomizedText;
-        currentLetterIndex--;
-      }
-
-      // Transition to the next word
-      if (currentLetterIndex === -1) {
-        currentWordIndex = (currentWordIndex + 1) % words.length;
-        currentLetterIndex = 0;
-
-        // Randomize the letters of the previous word
-        const previousWord = words[(currentWordIndex + words.length - 1) % words.length];
-        let randomizedText = "";
-        for (let i = 0; i < previousWord.length; i++) {
-          randomizedText += String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33));
+      if (direction === 1) {
+        // Forward animation: reveal letters
+        if (currentLetterIndex < word.length) {
+          text += word[currentLetterIndex];
+          currentLetterIndex++;
+        } else {
+          direction = -1;
         }
-        animatedText.textContent = randomizedText;
-        
-        await new Promise((resolve) => setTimeout(resolve, 800));
+      } else {
+        // Backward animation: remove letters
+        if (currentLetterIndex > 0) {
+          text = text.slice(0, -1);
+          currentLetterIndex--;
+        } else {
+          direction = 1;
+          currentWordIndex = (currentWordIndex + 1) % words.length;
+          text = "";
+        }
       }
 
       await new Promise((resolve) => setTimeout(resolve, 100));

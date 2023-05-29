@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           direction = -1;
           currentLetterIndex--;
+          text = ""; // Reset text for backward animation
           speed = 100; // Reset speed for backward animation
         }
       } else {
@@ -89,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           direction = 1;
           currentWordIndex = (currentWordIndex + 1) % words.length;
-          text = "";
+          text = ""; // Reset text for next word
           speed = 500; // Reset speed for next word
         }
       }

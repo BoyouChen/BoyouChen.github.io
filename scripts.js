@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentLetterIndex = 0;
   let direction = 1;
   let text = "";
-  let speed = 500; // Initial animation speed in milliseconds
+  let speed = 300; // Initial animation speed in milliseconds
   let speedChangeRate = 0.9; // Rate at which the speed changes
 
   async function animateText() {
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
           direction = 1;
           currentWordIndex = (currentWordIndex + 1) % words.length;
           text = "";
-          speed = 500; // Reset speed for next word
+          speed = 300; // Reset speed for next word
         }
       }
 
